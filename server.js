@@ -22,10 +22,12 @@ app.use(bodyParser.json({ type: "application/json" }));
 app.use(bodyParser.raw({ limit: "50mb" }));
 
 
-app.use('/', express.static(__dirname + '/laptopshop'));
-app.use('/mangoshop', express.static(__dirname + '/mangoshop'));
-app.use('/mangoshop', express.static(__dirname + '/spurproject'));
-app.use('/mangoshop', express.static(__dirname + '/jobsite'));
+app.use('/expresshop', express.static(__dirname + '/expresshop'));
+app.use('/indianmango', express.static(__dirname + '/indianmango'));
+app.use('/naturemango', express.static(__dirname + '/naturemango'));
+app.use('/spurapp', express.static(__dirname + '/spurapp'));
+app.use('/jobsite', express.static(__dirname + '/jobsite'));
+app.use('/admin', express.static(__dirname + '/jobsite'));
 
 // app.get('/api/getvessellistById',vessels.getvessellistsById);  
 global.appRoot = path.resolve(__dirname);
