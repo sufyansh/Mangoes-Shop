@@ -4512,3 +4512,16 @@ h6.h1 {
     display: inline-block !important;
   }
 }
+#border
+{
+    border="1px";
+    border-color: crimson;
+    color: rgb(161, 42, 165);
+    font-style: normal;
+    padding:10px;
+}
+.Shape {
+  width: 5px;
+  height: 8px;
+  background-color: #4a4a4a;
+}
