@@ -27,7 +27,8 @@ app.use('/indianmango', express.static(__dirname + '/indianmango'));
 app.use('/naturemango', express.static(__dirname + '/naturemango'));
 app.use('/spurapp', express.static(__dirname + '/spurapp'));
 app.use('/jobsite', express.static(__dirname + '/jobsite'));
-app.use('/admin', express.static(__dirname + '/jobsite'));
+app.use('/admin', express.static(__dirname + '/admin'));
+app.use('/vueadmin', express.static(__dirname + '/vueadmin/public'));
 
 // app.get('/api/getvessellistById',vessels.getvessellistsById);  
 global.appRoot = path.resolve(__dirname);
