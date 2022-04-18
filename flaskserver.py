@@ -46,7 +46,14 @@ def spurapp(filename):
         print("no filename")
     return send_from_directory(app.root_path + '/spurapp/', filename)
 
+@app.route('/<path:filename>')
+def jwt(filename):
+    print(filename)
+    if(filename==""):
+        print("no filename")
+    return send_from_directory(app.root_path + '/jwt/public', filename)
+
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=7000,debug=True)
+    app.run(host='0.0.0.0', port=9001,debug=True)
     
