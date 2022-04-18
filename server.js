@@ -29,6 +29,7 @@ app.use('/spurapp', express.static(__dirname + '/spurapp'));
 app.use('/jobsite', express.static(__dirname + '/jobsite'));
 app.use('/admin', express.static(__dirname + '/admin'));
 app.use('/vueadmin', express.static(__dirname + '/vueadmin/public'));
+app.use('/fashion', express.static(__dirname + '/fashion'));
 
 // app.get('/api/getvessellistById',vessels.getvessellistsById);  
 global.appRoot = path.resolve(__dirname);

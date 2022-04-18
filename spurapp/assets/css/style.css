@@ -4520,8 +4520,14 @@ h6.h1 {
     font-style: normal;
     padding:10px;
 }
-.Shape {
-  width: 5px;
-  height: 8px;
-  background-color: #4a4a4a;
+.table {
+  background-color: #fff;
+  width: 97%;
+  padding: 40px;
+  cellspacing: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+  ;
+  
 }
