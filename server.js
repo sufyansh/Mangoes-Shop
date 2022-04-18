@@ -22,7 +22,7 @@ app.use(bodyParser.json({ type: "application/json" }));
 app.use(bodyParser.raw({ limit: "50mb" }));
 
 
-app.use('/expresshop', express.static(__dirname + '/expresshop'));
+app.use('/expreslaptop', express.static(__dirname + '/expreslaptop'));
 app.use('/indianmango', express.static(__dirname + '/indianmango'));
 app.use('/naturemango', express.static(__dirname + '/naturemango'));
 app.use('/spurapp', express.static(__dirname + '/spurapp'));
