@@ -388,18 +388,19 @@
                                         <form>
                                             <div class="form-group">
                                                 <label>Org ID</label>
-                                                <input type="email" class="form-control" placeholder="org-id">
+                                                <input type="text" class="form-control" ng-model="data.org_id" placeholder="">
+
                                             </div>
                                             <div class="form-group">
                                                 <label>Name</label>
-                                                <input type="email" class="form-control" placeholder="name">
+                                                <input type="text" class="form-control" ng-model="data.name">
                                             </div>
                                             <div class="form-group">
                                                 <label>Description</label>
-                                                <input type="password" class="form-control" placeholder="Password">
+                                                <input type="text" class="form-control" placeholder="" ng-model="data.description">
                                             </div>
 
-                                            <button type="submit" class="btn btn-default">Submit</button>
+                                            <button type="submit" class="btn btn-warning" ng-click="categoryadd()"> Save</button>
                                         </form>
                                     </div>
                                 </div>
