@@ -28,17 +28,28 @@
     <link href="assets/css/lib/bootstrap.min.css" rel="stylesheet">
     <link href="assets/css/lib/helper.css" rel="stylesheet">
     <link href="assets/css/style.css" rel="stylesheet">
+
+
+    <!-- 1. Add the following script to your page. -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
     <script src="assets/js/angular-storage.min.js"></script>
     <script src="assets/js/angular-payments.js"></script>
-    <script src="assets/js/shopCtrl.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/userCtrl.js"></script>
     <script src="assets/js/categoryCtrl.js"></script>
+    <script src="assets/js/supercategoryCtrl.js"></script>
+
+    <!-- 1. Add the following script to your page. -->
+
+
 
 </head>
 
 
+<!-- 2. Add the following tags - ng-app, ng-controller, ng-init to your body tag with relevant info. -->
 
-<body ng-app="shopcart" ng-controller="orderCtrl" ng-init="allcategories()">
+<body ng-app="adminpanel" ng-controller="supercategoryCtrl" ng-init="listsupercategories()">
+    <!-- 2. Add the following script to your page. -->
 
 
     <div class="sidebar sidebar-hide-to-small sidebar-shrink sidebar-gestures">
@@ -379,10 +390,10 @@
                                             </thead>
                                             <tbody>
 
-                                                <tr ng-repeat="category in categories">
-                                                    <td> {{category.org_id}} </td>
-                                                    <td> {{category.name}} </td>
-                                                    <td> {{category.description}} </td>
+                                                <tr ng-repeat="supercategory in supercategories">
+                                                    <td> {{supercategory.org_id}} </td>
+                                                    <td> {{supercategory.name}} </td>
+                                                    <td> {{supercategory.description}} </td>
 
                                                 </tr>
 
