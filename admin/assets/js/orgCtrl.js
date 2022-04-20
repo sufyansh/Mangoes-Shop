@@ -46,7 +46,9 @@ app.controller(
                     }
                 })
                 .error(function() {
-                    alert("Please check your internet connection or data source..");
+                    var msg = res;
+                    console.log(res)
+                    alert(res);
                 });
         };
 

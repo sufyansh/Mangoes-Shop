@@ -43,7 +43,7 @@ app.controller('categoryCtrl', function($scope, $http, $window, $location, $sce,
             $scope.response = res;
             // console.log(res);
             if (res.status == 'false') {
-                alert(res.message);
+                alert(res);
             } else {
                 alert("Category save Successfully");
                 $window.location = "category.html";
