@@ -31,6 +31,7 @@ app.use('/admin', express.static(__dirname + '/admin'));
 app.use('/vueadmin', express.static(__dirname + '/vueadmin/public'));
 app.use('/fashion', express.static(__dirname + '/fashion'));
 app.use('/stones', express.static(__dirname + '/stones'));
+app.use('/fishyhub', express.static(__dirname + '/fishyhub'));
 
 // app.get('/api/getvessellistById',vessels.getvessellistsById);  
 global.appRoot = path.resolve(__dirname);
