@@ -12,6 +12,7 @@ app.controller(
         .get(baseurl + "org/")
 
         .success(function (res) {
+          console.log(res)
           if (res.status == "false") {
           } else {
             $scope.organisations = res.data;
