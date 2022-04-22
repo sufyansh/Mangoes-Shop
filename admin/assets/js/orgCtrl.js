@@ -66,28 +66,6 @@ app.controller(
     };
 
     //orderCtrl ends
-    $scope.orgedit = function (id) {
-      // console.log(id)
-      $scope.formvalidate = "true";
-      console.log("New Cars", $scope.organisations);
-      const data = $scope.organisations.filter((e) => e.id === id);
-      console.log(data);
-
-      localStorage.setItem("data", JSON.stringify(data));
-      $window.location = `org-add.html?id=${id}`;
-      // $http.patch(baseurl + "org/" + id, $scope.data).success(function (res) {
-      //   $scope.response = res;
-      //   console.log(res);
-      //   if (res.status == "false") {
-      //     alert(res.message);
-      //   } else {
-      //     alert("org  Successfully");
-      //     // $window.location = "org-add.html";
-      //   }
-      //   // }).error(function() {
-      //   //         // alert("Please check your internet connection or data source..");
-      // });
-    };
 
     $scope.orgdelete = function (id) {
       console.log(id);
@@ -107,6 +85,33 @@ app.controller(
         }
       });
     };
+
+    $scope.orgedit = function (id) {
+      // console.log(id)
+      $scope.formvalidate = "true";
+      console.log("New Cars", $scope.organisations);
+      const data = $scope.organisations.filter((e) => e.id === id);
+      console.log(data);
+      $http.delete(baseurl + "org/" + id, $scope.data).success(function (res) {
+        localStorage.setItem("data", JSON.stringify(data));
+        $window.location = `org-add.html?id=${id}`;
+      });
+      // $scope.$orgdelete();
+      // console.logF();
+      // $http.patch(baseurl + "org/" + id, $scope.data).success(function (res) {
+      //   $scope.response = res;
+      //   console.log(res);
+      //   if (res.status == "false") {
+      //     alert(res.message);
+      //   } else {
+      //     alert("org  Successfully");
+      //     // $window.location = "org-add.html";
+      //   }
+      //   // }).error(function() {
+      //   //         // alert("Please check your internet connection or data source..");
+      // });
+    };
+
     $scope.ngOnInit = () => {};
   }
 );
