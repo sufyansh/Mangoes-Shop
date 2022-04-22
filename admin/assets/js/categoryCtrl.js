@@ -58,18 +58,20 @@ app.controller(
 
       var Id = 1;
 
-      $http.patch(baseurl + "category/" + id, $scope.data).success(function (res) {
-        $scope.response = res;
-        console.log(res);
-        if (res.status == "false") {
-          alert(res.message);
-        } else {
-          alert("category save Successfully");
-          $window.location = "category.html";
-        }
-        // }).error(function() {
-        //         // alert("Please check your internet connection or data source..");
-      });
+      $http
+        .patch(baseurl + "category/" + id, $scope.data)
+        .success(function (res) {
+          $scope.response = res;
+          console.log(res);
+          if (res.status == "false") {
+            alert(res.message);
+          } else {
+            alert("category save Successfully");
+            $window.location = "category.html";
+          }
+          // }).error(function() {
+          //         // alert("Please check your internet connection or data source..");
+        });
     };
 
     $scope.categorydelete = function (id) {
@@ -78,19 +80,21 @@ app.controller(
       console.log("New delete");
       console.log($scope.data);
 
-      var Id = 1;
+      // var Id = 1;
 
-      $http.delete(baseurl + "category/" + id, $scope.data).success(function (res) {
-        $scope.response = res;
-        console.log(res);
-        if (res.status == "false") {
-          alert(res.message);
-        } else {
-          alert("category save Successfully deleted");
-          location.reload();
-          //   $window.location = "category.html";
-        }
-      });
+      $http
+        .delete(baseurl + "category/" + id, $scope.data)
+        .success(function (res) {
+          $scope.response = res;
+          console.log(res);
+          if (res.status == "false") {
+            alert(res.message);
+          } else {
+            alert("category save Successfully deleted");
+            location.reload();
+            //   $window.location = "category.html";
+          }
+        });
     };
   }
 );
