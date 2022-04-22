@@ -3,6 +3,20 @@ app.controller(
   function ($scope, $http, $window, $location, $sce, $timeout, store) {
     var baseurl = "https://api.superadmin.shop/api/";
 
+    $(document).ready(function () {
+      if (window.location.pathname === "/admin/org-add.html") {
+        let s = new URL(window.location.href);
+        if (s.searchParams.get("id")) {
+          const data = JSON.parse(localStorage.getItem("data"));
+          $("#name").val(data[0].org_name).trigger("change");
+          $("#address").val(data[0].org_address).trigger("change");
+          $("#telephoneNumber").val(data[0].org_telephone).trigger("change");
+          $("#zip").val(data[0].org_zip).trigger("change");
+          $("#email").val(data[0].org_email).trigger("change");
+          $("#password").val(data[0].org_password).trigger("change");
+        }
+      }
+    });
     $scope.givealert = function (req, res) {
       alert("I am alert");
     };
@@ -26,8 +40,8 @@ app.controller(
       location.href = "index.html";
     };
 
-
     $scope.orgadd = function () {
+      console.log("hello");
       $scope.formvalidate = "true";
       console.log("New Cars");
       console.log($scope.data);
@@ -45,42 +59,19 @@ app.controller(
           }
         })
         .error(function () {
-          var msg = res;
-          console.log(res);
-          alert(res);
+          // var msg = res;
+          // console.log(res);
+          // alert(res);
         });
     };
 
     //orderCtrl ends
-    $scope.orgedit = function (id) {
-      console.log(id);
-      $scope.formvalidate = "true";
-      console.log("New Cars");
-      console.log($scope.data);
-
-      var Id = 1;
-
-      $http.patch(baseurl + "org/" + id, $scope.data).success(function (res) {
-        $scope.response = res;
-        console.log(res);
-        if (res.status == "false") {
-          alert(res.message);
-        } else {
-          alert("org save Successfully");
-          $window.location = "org.html";
-        }
-        // }).error(function() {
-        //         // alert("Please check your internet connection or data source..");
-      });
-    };
 
     $scope.orgdelete = function (id) {
       console.log(id);
       $scope.formvalidate = "true";
       console.log("New delete");
       console.log($scope.data);
-
-      
 
       $http.delete(baseurl + "org/" + id, $scope.data).success(function (res) {
         $scope.response = res;
@@ -94,5 +85,33 @@ app.controller(
         }
       });
     };
+
+    $scope.orgedit = function (id) {
+      // console.log(id)
+      $scope.formvalidate = "true";
+      console.log("New Cars", $scope.organisations);
+      const data = $scope.organisations.filter((e) => e.id === id);
+      console.log(data);
+      $http.delete(baseurl + "org/" + id, $scope.data).success(function (res) {
+        localStorage.setItem("data", JSON.stringify(data));
+        $window.location = `org-add.html?id=${id}`;
+      });
+      // $scope.$orgdelete();
+      // console.logF();
+      // $http.patch(baseurl + "org/" + id, $scope.data).success(function (res) {
+      //   $scope.response = res;
+      //   console.log(res);
+      //   if (res.status == "false") {
+      //     alert(res.message);
+      //   } else {
+      //     alert("org  Successfully");
+      //     // $window.location = "org-add.html";
+      //   }
+      //   // }).error(function() {
+      //   //         // alert("Please check your internet connection or data source..");
+      // });
+    };
+
+    $scope.ngOnInit = () => {};
   }
 );
