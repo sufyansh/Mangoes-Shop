@@ -12,7 +12,6 @@ app.controller(
         .get(baseurl + "org/")
 
         .success(function (res) {
-          console.log(res)
           if (res.status == "false") {
           } else {
             $scope.organisations = res.data;
@@ -27,8 +26,6 @@ app.controller(
       location.href = "index.html";
     };
 
-    //***************************************************************************************
-    //Save Mango
 
     $scope.orgadd = function () {
       $scope.formvalidate = "true";
@@ -83,7 +80,7 @@ app.controller(
       console.log("New delete");
       console.log($scope.data);
 
-      var Id = 1;
+      
 
       $http.delete(baseurl + "org/" + id, $scope.data).success(function (res) {
         $scope.response = res;
